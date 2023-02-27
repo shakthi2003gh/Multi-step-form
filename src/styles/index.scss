@@ -1,0 +1,15 @@
+@forward "variables";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--clr-cool-gray);
+  background-color: var(--clr-light-gray);
+}
+
+h1,
+.title {
+  color: var(--clr-marine-blue);
+}
