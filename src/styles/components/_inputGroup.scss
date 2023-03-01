@@ -1,0 +1,49 @@
+.input-group {
+  position: relative;
+
+  label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--clr-marine-blue);
+  }
+
+  input {
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border-radius: 5px;
+    border: 1px solid var(--clr-light-gray);
+    caret-color: var(--clr-marine-blue);
+    color: var(--clr-marine-blue);
+    background: transparent;
+    outline: none;
+
+    &::placeholder {
+      color: hsla(231, 11%, 63%, 0.644);
+    }
+
+    &:focus {
+      border-color: var(--clr-marine-blue);
+    }
+  }
+
+  .error-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 700;
+    color: var(--clr-strawberry-red);
+  }
+
+  &.error {
+    input {
+      border-color: var(--clr-strawberry-red);
+    }
+
+    .error-message {
+      display: block;
+    }
+  }
+}
