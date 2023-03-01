@@ -1,0 +1,31 @@
+.btn {
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  color: var(--clr-cool-gray);
+  background-color: transparent;
+  outline: none;
+
+  &:hover {
+    color: var(--clr-marine-blue);
+    cursor: pointer;
+  }
+
+  &.btn--primary,
+  &.btn--secondary {
+    border-radius: 6px;
+    color: var(--clr-white);
+
+    &:hover {
+      filter: brightness(1.8);
+    }
+  }
+
+  &.btn--primary {
+    background-color: var(--clr-marine-blue);
+  }
+
+  &.btn--secondary {
+    background-color: var(--clr-purplish-blue);
+  }
+}
