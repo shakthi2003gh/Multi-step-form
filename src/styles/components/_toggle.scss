@@ -1,0 +1,30 @@
+.toggle {
+  position: relative;
+  display: block;
+  width: 3.2rem;
+  height: 1.7rem;
+  border-radius: 100vh;
+  background-color: var(--clr-marine-blue);
+  cursor: pointer;
+
+  margin: 5rem;
+
+  input {
+    visibility: hidden;
+
+    &:checked + span {
+      transform: translateX(138%);
+    }
+  }
+
+  > span {
+    position: absolute;
+    display: inline-block;
+    inset: 5px;
+    right: auto;
+    aspect-ratio: 1;
+    border-radius: 100vh;
+    background-color: var(--clr-white);
+    transition: transform 0.2s ease-in-out;
+  }
+}
