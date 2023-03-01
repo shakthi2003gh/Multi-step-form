@@ -1,0 +1,49 @@
+@use "../variables" as v;
+
+.step {
+  font-size: 0.8rem;
+  color: var(--clr-white);
+
+  .count-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    width: 28px;
+    aspect-ratio: 1;
+    border: 1px solid;
+    border-radius: 100vh;
+  }
+
+  &.active .count-circle {
+    color: var(--clr-marine-blue);
+    border-color: var(--clr-light-blue);
+    background-color: var(--clr-light-blue);
+  }
+
+  .detail {
+    display: none;
+    text-transform: uppercase;
+
+    .count {
+      font-size: 0.85em;
+      color: var(--clr-cool-gray);
+    }
+
+    .name {
+      font-size: 0.9em;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  @media (min-width: v.$break-point) {
+    display: flex;
+    gap: 1rem;
+
+    .detail {
+      display: grid;
+    }
+  }
+}
