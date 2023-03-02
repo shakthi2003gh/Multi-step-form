@@ -1,0 +1,36 @@
+@use "../variables" as v;
+
+.select-plan {
+  padding: 1.7rem 1.6rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: var(--clr-white);
+
+  .plans {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .billing-period {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 500;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    background-color: var(--clr-alabaster);
+  }
+
+  @media (min-width: v.$break-point) {
+    .plans {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .billing-period {
+      margin-top: 2.3rem;
+    }
+  }
+}
