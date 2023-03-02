@@ -1,0 +1,19 @@
+@use "../variables" as v;
+
+.pick-add-ons {
+  padding: 1.7rem 1.6rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: var(--clr-white);
+
+  .add-ons {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  @media (min-width: v.$break-point) {
+    .add-ons {
+      gap: 1rem;
+    }
+  }
+}
