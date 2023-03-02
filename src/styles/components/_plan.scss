@@ -1,0 +1,36 @@
+@use "../variables" as v;
+
+.plan {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--clr-light-gray);
+
+  &.selected {
+    border-color: var(--clr-pastel-blue);
+    background-color: var(--clr-magnolia);
+  }
+
+  .details {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+
+    .title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .offer {
+      font-size: 0.8rem;
+      color: var(--clr-marine-blue);
+    }
+  }
+
+  @media (min-width: v.$break-point) {
+    flex-direction: column;
+    gap: 2.2rem;
+  }
+}
