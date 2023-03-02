@@ -1,6 +1,10 @@
-const Plan = ({ icon, title, price, offer, selected }) => {
+const Plan = ({ id, icon, title, price, offer, selected, onClick }) => {
   return (
-    <div className={"plan" + (selected ? " selected" : "")}>
+    <div
+      id={id}
+      className={"plan" + (selected ? " selected" : "")}
+      onClick={onClick}
+    >
       <img src={icon} alt="" />
 
       <div className="details">

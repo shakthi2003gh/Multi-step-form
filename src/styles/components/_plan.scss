@@ -7,6 +7,7 @@
   padding: 1rem;
   border-radius: 8px;
   border: 2px solid var(--clr-light-gray);
+  cursor: pointer;
 
   &.selected {
     border-color: var(--clr-pastel-blue);
@@ -27,6 +28,10 @@
       font-size: 0.8rem;
       color: var(--clr-marine-blue);
     }
+  }
+
+  &:hover {
+    border-color: var(--clr-pastel-blue);
   }
 
   @media (min-width: v.$break-point) {
