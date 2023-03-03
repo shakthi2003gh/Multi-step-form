@@ -1,0 +1,28 @@
+@use "../variables" as v;
+
+.thank-you {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding-block: 5rem !important;
+
+  img {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0 !important;
+  }
+
+  @media (min-width: v.$break-point) {
+    h1 {
+      margin-bottom: 1rem !important;
+    }
+
+    img {
+      width: 80px;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import PersonalInfo from "./sections/personalInfo";
 import SelectPlan from "./sections/selectPlan";
 import AddOns from "./sections/addOns";
 import Summary from "./sections/summary";
+import Thankyou from "./sections/thankyou";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -51,11 +52,15 @@ function App() {
           />
         )}
 
-        <Navigation
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
-          isValid={isValid}
-        />
+        {currentStep === 5 && <Thankyou />}
+
+        {currentStep !== 5 && (
+          <Navigation
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            isValid={isValid}
+          />
+        )}
       </div>
     </div>
   );
