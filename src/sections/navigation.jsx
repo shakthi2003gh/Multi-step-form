@@ -1,7 +1,7 @@
 import Button from "../components/buttons";
 
-const Navigation = ({ currentStep, setCurrentStep }) => {
-  const nextStep = () => setCurrentStep((prev) => ++prev);
+const Navigation = ({ currentStep, setCurrentStep, isValid }) => {
+  const nextStep = () => isValid && setCurrentStep((prev) => ++prev);
   const prevStep = () => setCurrentStep((prev) => --prev);
 
   const [label, varient] =

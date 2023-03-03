@@ -1,6 +1,6 @@
 import AddOn from "./../components/addOn";
 
-const AddOns = ({ billingPeriod = "Monthly" }) => {
+const AddOns = ({ billingPeriod = "Monthly", selectedAddons, setAddons }) => {
   const addons = [
     {
       id: "1",
@@ -23,14 +23,22 @@ const AddOns = ({ billingPeriod = "Monthly" }) => {
   ];
 
   return (
-    <div className="pick-add-ons">
+    <div className="pick-add-ons container">
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming exprience.</p>
 
       <div className="add-ons">
-        {addons.map((addon, i) => (
-          <AddOn key={i} {...addon} />
-        ))}
+        {addons.map((addon, i) => {
+          console.log(selectedAddons.includes(addon));
+          return (
+            <AddOn
+              key={i}
+              {...addon}
+              selected={selectedAddons.some((a) => a.id === addon.id)}
+              setAddons={setAddons}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
+import InputGroup from "./../components/inputGroup";
 import { useState } from "react";
 import Joi from "joi";
-import InputGroup from "./../components/inputGroup";
 
-const PersonalInfo = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-
+const PersonalInfo = ({ initialValue, setInitialValue, setIsValid }) => {
+  const [name, setName] = useState(initialValue.name);
+  const [email, setEmail] = useState(initialValue.email);
+  const [number, setNumber] = useState(initialValue.number);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [numberError, setNumberError] = useState("");
@@ -32,10 +31,19 @@ const PersonalInfo = () => {
 
     setError(error ? error.message.replace("value", id) : "");
     setValue(value);
-  };
 
+    const { error: errors } = Joi.object(schema).validate({
+      name,
+      email,
+      number,
+      [id]: value,
+    });
+
+    setInitialValue({ name, email, number });
+    setIsValid(!errors);
+  };
   return (
-    <div className="personal-info">
+    <div className="personal-info container">
       <h1>Personal info</h1>
 
       <p>Please Provide your name, email address and phone number.</p>

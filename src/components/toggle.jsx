@@ -1,7 +1,7 @@
-const Toggle = ({ onClick }) => {
+const Toggle = ({ toggled, onChange }) => {
   return (
     <label className="toggle">
-      <input type="checkbox" onClick={onClick} />
+      <input type="checkbox" onChange={onChange} checked={toggled} />
       <span></span>
     </label>
   );

@@ -1,8 +1,20 @@
-const AddOn = ({ id, title, description, price }) => {
+const AddOn = ({ id, title, description, price, selected, setAddons }) => {
+  const handleChange = (e) => {
+    const isAdd = e.target.checked;
+    if (isAdd)
+      setAddons((prev) => [...prev, { id, title, description, price }]);
+    else setAddons((prev) => prev.filter((addon) => addon.id !== id));
+  };
+
   return (
     <label className="add-on" htmlFor={id}>
       <div className="checkbox">
-        <input type="checkbox" id={id} />
+        <input
+          id={id}
+          type="checkbox"
+          checked={selected}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="details">

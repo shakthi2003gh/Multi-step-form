@@ -1,11 +1,6 @@
 @use "../variables" as v;
 
 .select-plan {
-  padding: 1.7rem 1.6rem;
-  margin: 1rem;
-  border-radius: 10px;
-  background-color: var(--clr-white);
-
   .plans {
     display: grid;
     gap: 0.7rem;

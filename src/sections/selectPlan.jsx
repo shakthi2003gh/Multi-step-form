@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Plan from "./../components/plan";
 import Toggle from "./../components/toggle";
 
-const SelectPlan = () => {
-  const [billingPeriod, setBillingPeriod] = useState("Monthly");
-  const [selectedPlan, setSelectedPlan] = useState("1");
+const SelectPlan = ({ initialValue, setPlanDetails }) => {
+  const [billingPeriod, setBillingPeriod] = useState(
+    initialValue.billingPeriod || "Monthly"
+  );
+  const [selectedPlan, setSelectedPlan] = useState(initialValue.plan.id || "1");
   const Plans = [
     {
       id: "1",
@@ -32,6 +34,13 @@ const SelectPlan = () => {
     },
   ];
 
+  useEffect(() => {
+    setPlanDetails({
+      plan: Plans.filter(({ id }) => id === selectedPlan)[0],
+      billingPeriod,
+    });
+  }, [selectedPlan, billingPeriod]);
+
   const handleSelect = (e) => {
     setSelectedPlan(e.target.closest(".plan").id);
   };
@@ -41,7 +50,7 @@ const SelectPlan = () => {
   };
 
   return (
-    <div className="select-plan">
+    <div className="select-plan container">
       <h1>Select your plan</h1>
 
       <p>you have the option of monthly or yearly billing</p>
@@ -56,7 +65,7 @@ const SelectPlan = () => {
         <span className={billingPeriod === "Monthly" ? "title" : ""}>
           Monthly
         </span>
-        <Toggle onClick={handleToggle} />
+        <Toggle onChange={handleToggle} toggled={billingPeriod === "Yearly"} />
         <span className={billingPeriod === "Yearly" ? "title" : ""}>
           Yearly
         </span>
