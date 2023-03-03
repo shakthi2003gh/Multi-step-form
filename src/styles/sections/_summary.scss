@@ -1,0 +1,76 @@
+@use "../variables" as v;
+
+.summary {
+  .bill {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--clr-magnolia);
+
+    .selected-plan {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+      }
+
+      a {
+        color: var(--clr-cool-gray);
+
+        &:hover {
+          color: var(--clr-purplish-blue);
+        }
+      }
+    }
+
+    .divided {
+      width: 100%;
+      height: 2px;
+      margin-block: 1rem;
+      background-color: var(--clr-light-gray);
+    }
+
+    .selected-addons {
+      display: grid;
+      gap: 1rem;
+
+      .addon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .price {
+          color: var(--clr-marine-blue);
+        }
+      }
+    }
+
+    @media (min-width: v.$break-point) {
+      padding: 1.5rem;
+
+      .divided {
+        margin-block: 1.5rem;
+      }
+    }
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    .price {
+      font-weight: 700;
+      color: var(--clr-purplish-blue);
+    }
+
+    @media (min-width: v.$break-point) {
+      .price {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

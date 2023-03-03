@@ -28,17 +28,14 @@ const AddOns = ({ billingPeriod = "Monthly", selectedAddons, setAddons }) => {
       <p>Add-ons help enhance your gaming exprience.</p>
 
       <div className="add-ons">
-        {addons.map((addon, i) => {
-          console.log(selectedAddons.includes(addon));
-          return (
-            <AddOn
-              key={i}
-              {...addon}
-              selected={selectedAddons.some((a) => a.id === addon.id)}
-              setAddons={setAddons}
-            />
-          );
-        })}
+        {addons.map((addon, i) => (
+          <AddOn
+            key={i}
+            {...addon}
+            selected={selectedAddons.some((a) => a.id === addon.id)}
+            setAddons={setAddons}
+          />
+        ))}
       </div>
     </div>
   );

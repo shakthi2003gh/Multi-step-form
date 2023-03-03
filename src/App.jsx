@@ -4,6 +4,7 @@ import Navigation from "./sections/navigation";
 import PersonalInfo from "./sections/personalInfo";
 import SelectPlan from "./sections/selectPlan";
 import AddOns from "./sections/addOns";
+import Summary from "./sections/summary";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -37,6 +38,15 @@ function App() {
           <AddOns
             billingPeriod={planDetails.billingPeriod}
             selectedAddons={addOns}
+            setAddons={setAddons}
+          />
+        )}
+
+        {currentStep === 4 && (
+          <Summary
+            planDetails={planDetails}
+            addons={addOns}
+            setCurrentStep={setCurrentStep}
             setAddons={setAddons}
           />
         )}
